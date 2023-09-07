@@ -1,7 +1,14 @@
-import React, {FC} from 'react'
+import React, { FC } from 'react'
 
-const Block: FC = () => {
-    return <div data-cy="block"> 1 </div>
+import { Container } from './styles'
+
+interface IProps {
+  colIndex: number
+  rowIndex: number
+}
+
+const Block: FC<IProps> = ({ colIndex, rowIndex }) => {
+  return <Container data-cy={'block-${rowIndex}-${colIndex}'} />
 }
 
 export default Block
